@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/zacharysnewman/magical-method-debugger/compare/v1.1.0...v1.2.0) (2025-09-03)
+
+
+### Features
+
+* Updated readme, fixed missing meta file ([e538cbe](https://github.com/zacharysnewman/magical-method-debugger/commit/e538cbe1ab71bdf0be6525587e2fb18d246589cc))
+
 # [1.1.0](https://github.com/zacharysnewman/magical-method-debugger/compare/v1.0.0...v1.1.0) (2025-09-03)
 
 
