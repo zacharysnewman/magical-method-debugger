@@ -17,17 +17,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       # Install semantic-release temporarily
       - name: Install semantic-release
         run: npm install semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/npm @semantic-release/github --no-save
 
-      # Run semantic-release fully self-contained
+      # Run semantic-release on main branch
       - name: Run semantic-release
-        run: npx semantic-release --no-ci
+        run: npx semantic-release --no-ci --branches main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_REGISTRY: "https://registry.npmjs.org/"  # Required by @semantic-release/npm even if not publishing
-
-
+          NPM_CONFIG_REGISTRY: "https://registry.npmjs.org/"
