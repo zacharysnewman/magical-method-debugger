@@ -56,7 +56,6 @@ The debugger supports the following parameter types:
 - Methods with unsupported parameter types are hidden by default but can be shown by toggling "Show Unsupported"
 - Continuous invocation runs once for each game update frame, useful for methods that need to be called frequently during development
 - Parameter values are remembered per method and persist between editor sessions
-- The debugger only works in the Unity Editor, not in built applications
 - Methods can only be invoked while in Play mode; buttons are disabled otherwise
 
 ## License
