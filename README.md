@@ -49,7 +49,7 @@ The debugger supports the following parameter types:
 ## Requirements
 
 - Unity 2020.3 or later
-- Works only in the Unity Editor (not in built applications)
+- Works only in the Unity Editor
 
 ## Notes
 
