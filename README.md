@@ -30,7 +30,7 @@ A Unity package that adds a debug interface to MonoBehaviour inspectors, allowin
 Once installed, the Magical Method Debugger will automatically appear in the Inspector for any MonoBehaviour.
 
 1. Select a GameObject with a MonoBehaviour script attached
-2. In the Inspector, scroll down to see the "Method Debugger" section
+2. In the Inspector for any MonoBehaviour derived component, scroll down to see the "Method Debugger" section at the bottom
 3. Expand the categories (Public, Private, Inherited, MonoBehaviour) to see available methods
 4. For methods with parameters, expand the method foldout to set parameter values
 5. Click ▶¹ to call the method once, or click ▶ to enable continuous invocation (■ when active)
