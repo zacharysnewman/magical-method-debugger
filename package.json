@@ -1,6 +1,6 @@
 {
   "name": "com.zacharysnewman.mmd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Magical Method Debugger",
   "description": "Adds method debugging to all of your components.",
   "unity": "2020.3",
