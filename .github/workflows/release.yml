@@ -9,23 +9,18 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
 
-      # Install semantic-release temporarily
       - name: Install semantic-release
-        run: npm install semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/npm @semantic-release/github --no-save
+        run: npm install semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/github --no-save
 
-      # Run semantic-release on main branch
       - name: Run semantic-release
         run: npx semantic-release --no-ci --branches main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_REGISTRY: "https://registry.npmjs.org/"
