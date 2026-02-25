@@ -28,7 +28,6 @@ namespace UnityEditor.DebugTools
             var inheritedMethods = commonMethods.Where(m => m.DeclaringType != targetType).ToList();
 
             var allUnityMethods = commonMethods.Where(m => MethodDiscovery.IsUnityMethod(m) && !m.GetParameters().Any(p => !MethodDiscovery.IsTypeSupported(p.ParameterType))).ToList();
-            var allNonUnityMethods = commonMethods.Where(m => !MethodDiscovery.IsUnityMethod(m)).ToList();
 
             var declaredNonUnity = declaredMethods.Where(m => !MethodDiscovery.IsUnityMethod(m)).ToList();
             var inheritedNonUnity = inheritedMethods.Where(m => !MethodDiscovery.IsUnityMethod(m)).ToList();

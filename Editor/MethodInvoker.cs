@@ -27,6 +27,11 @@ namespace UnityEditor.DebugTools
         public void InvokeMethod(MethodInfo method, object[] targets, bool log = true)
         {
             string methodKey = MethodDiscovery.GetMethodKey(method);
+            if (!methodParameters.ContainsKey(methodKey))
+            {
+                Debug.LogError($"[MethodInvoker] Parameters not prepared for '{methodKey}'. Call PrepareParameters before InvokeMethod.");
+                return;
+            }
             foreach (var t in targets)
             {
                 try
