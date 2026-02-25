@@ -25,5 +25,6 @@ public class DebugMethods : Editor
     protected void OnDisable()
     {
         gui.ClearContinuous();
+        gui.Cleanup();
     }
 }

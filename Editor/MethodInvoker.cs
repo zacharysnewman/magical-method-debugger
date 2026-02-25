@@ -150,13 +150,13 @@ namespace UnityEditor.DebugTools
             {
                 // Deactivate continuous invocation
                 continuousStates[methodKey] = false;
-                activeMethods.Remove(method);
+                activeMethods.RemoveAll(m => MethodDiscovery.GetMethodKey(m) == methodKey);
             }
             else
             {
                 // Activate continuous invocation
                 continuousStates[methodKey] = true;
-                if (!activeMethods.Contains(method))
+                if (!activeMethods.Any(m => MethodDiscovery.GetMethodKey(m) == methodKey))
                 {
                     activeMethods.Add(method);
                 }
