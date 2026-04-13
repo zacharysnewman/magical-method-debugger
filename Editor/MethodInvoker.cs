@@ -27,6 +27,11 @@ namespace UnityEditor.DebugTools
         public void InvokeMethod(MethodInfo method, object[] targets, bool log = true)
         {
             string methodKey = MethodDiscovery.GetMethodKey(method);
+            if (!methodParameters.ContainsKey(methodKey))
+            {
+                Debug.LogError($"[MethodInvoker] Parameters not prepared for '{methodKey}'. Call PrepareParameters before InvokeMethod.");
+                return;
+            }
             foreach (var t in targets)
             {
                 try
@@ -150,13 +155,13 @@ namespace UnityEditor.DebugTools
             {
                 // Deactivate continuous invocation
                 continuousStates[methodKey] = false;
-                activeMethods.Remove(method);
+                activeMethods.RemoveAll(m => MethodDiscovery.GetMethodKey(m) == methodKey);
             }
             else
             {
                 // Activate continuous invocation
                 continuousStates[methodKey] = true;
-                if (!activeMethods.Contains(method))
+                if (!activeMethods.Any(m => MethodDiscovery.GetMethodKey(m) == methodKey))
                 {
                     activeMethods.Add(method);
                 }

@@ -21,7 +21,7 @@ namespace UnityEditor.DebugTools
             EditorApplication.update += OnEditorUpdate;
         }
 
-        ~DebugMethodGUI()
+        public void Cleanup()
         {
             EditorApplication.update -= OnEditorUpdate;
         }

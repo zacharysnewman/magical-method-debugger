@@ -82,9 +82,6 @@ namespace UnityEditor.DebugTools
                     {
                         EditorGUI.indentLevel++;
 
-                        // Prepare parameter storage
-                        invoker.PrepareParameters(method);
-
                         // Draw parameter fields
                         using (new EditorGUI.DisabledScope(!EditorApplication.isPlaying))
                         {
